@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './components/MainComponent';
-
-
+import 'font-awesome/css/font-awesome.min.css';
+import 'bootstrap-social/bootstrap-social.css';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
-  
-  render(){
+
+  render() {
     return (
-      <div>
-       <Main/>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Main />
+        </div>
+      </BrowserRouter>
     );
   }
-  
+
 }
 
 export default App;
