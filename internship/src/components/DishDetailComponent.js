@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardImgOverlay, CardBody, CardText, CardTitle } from 'reactstrap';
-
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 class DishComments extends Component {
     renderDish(dish) {
         if (dish != null)
@@ -44,7 +45,18 @@ class DishComments extends Component {
         if (this.props.selectedDish != null)
             console.log(this.props.selectedDish)
         return (
-            <div className="container col-12 col-md-10 m-10">
+            <div className="container">
+            <div className="row">
+                <Breadcrumb>
+
+                    <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                    <BreadcrumbItem active>{this.props.dish.name}</BreadcrumbItem>
+                </Breadcrumb>
+                <div className="col-12">
+                    <h3>{this.props.dish.name}</h3>
+                    <hr />
+                </div>                
+            </div>
                 <div >
                     {this.renderDish(this.props.selectedDish)}
                 </div>
